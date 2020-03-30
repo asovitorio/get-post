@@ -1,0 +1,211 @@
+<!doctype html>
+  <html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+ 
+  <title><%= titulo %></title>
+  <style>
+    .buton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+
+    }
+
+    table {
+      background-color: rgba(255, 255, 255, 0.774);
+      margin-top: 10px;
+    }
+
+    body {
+      background-image: url('/images/lista.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-bottom: 10px;
+      background-color: rgba(17, 170, 231, 0.692) ;
+    }
+
+    thead {
+      background-color: rgba(17, 170, 231, 0.692);
+    }
+
+    tbody {
+      overflow-y: scroll;
+    }
+
+    td {
+      font-size: 20px;
+
+    }
+    div.form-row label{
+      margin-top: 10px;
+      border-radius: 5px;
+      color: white;
+      text-shadow: 1px 0px 8px black;
+      background-color: rgba(17, 170, 231, 0.692);
+
+    }
+
+    table td,
+    table th {
+      padding: -0.25rem;
+      vertical-align: inherit;
+      border-top: 1px solid #dee2e6;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      padding-inline-start: 0px
+    }
+
+    ul li {
+      margin-right: 5px;
+    }
+
+
+    a.btn {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      border-radius: 100px;
+      width: 30px;
+      height: 30px;
+      font-size: 15px;
+      box-shadow: 0px 1px 7px black;
+
+    }
+
+
+    button.btn.btn-danger {
+      display: flex;
+      border-radius: 20px;
+      border-radius: 40px;
+      width: 30px;
+      height: 30px;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 1px 7px black
+    }
+
+    button.btn.btn-danger span {
+      position: relative;
+      bottom: 3px;
+      left: 1px;
+    }
+
+    a.btn#inserir {
+      margin-bottom: 20px;
+      position: fixed;
+      bottom: 1px;
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
+      /* right: 154px;
+    bottom: 17px; */
+    }
+
+    h1 {
+      background-color: rgba(17, 170, 231, 0.692);
+      display: inline;
+      border-radius: 5px;
+      color: white;
+      text-shadow: 1px 0px 8px black;
+
+    }
+  </style>
+
+</head>
+  <body>
+    <br>
+    <div class="container">
+      <h1><%= titulo %> </h1>
+      <form action="cadastrar" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
+        <div class="form-row">
+          <div class="col-md-12 mb-12">
+            <label for="validationCustom01">Nome</label>
+            <input type="text" name="nome" class="form-control" id="validationCustom01" placeholder="Nome" value=""
+              required>
+            <div class="valid-feedback">
+              Bom
+            </div>
+          </div>
+          <div class="col-md-8 mb-8">
+            <label for="validationCustomUsername">Email</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+              </div>
+              <input type="email" name="email" class="form-control" id="validationCustomUsername" placeholder="Email"
+                aria-describedby="inputGroupPrepend" required>
+              <div class="invalid-feedback">
+                Esqueceu o email.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationCustom03">Senha</label>
+            
+            <input type="password" name="senha" class="form-control" id="validationCustom03" placeholder="Senha" required>
+            <div class="invalid-feedback">
+             Esqueceu a senha
+            </div>
+          </div>
+        </div>
+      
+       <input name="foto" type="file" id="foto" ><br><br>
+
+        <button class="btn btn-primary" type="submit">Salvar</button>
+      </form>
+
+      <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+          'use strict';
+          window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+              form.addEventListener('submit', function (event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+      </script>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+  </body>
+
+  </html>
